@@ -1,0 +1,25 @@
+
+
+button {
+font-size: 18px;
+font-family: sans-serif;
+margin: 0 auto;
+}
+
+.buttons {
+text-align: center;
+margin: 30px;
+
+}
+
+.container {
+width: 800px;
+height:800px;
+margin: 0 auto;
+border-style: solid;
+border-width: 3px;
+border-color: black;
+border-radius: 10px;
+
+
+}
