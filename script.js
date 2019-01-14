@@ -3,6 +3,7 @@ const boxdiv = document.getElementsByClassName('boxdiv');
 const reset = document.getElementById('reset');
 const randomColors = document.getElementById('random-colors')
 let defaultSize = 10000;
+const rndButton = document.getElementsByClassName('highlight')
 
 
 var cell = document.querySelectorAll('.boxdiv');
@@ -46,17 +47,26 @@ getGrid(howMany)
 }
 
 const randomColorGen = function () {
+ 
  const divs = document.querySelectorAll('.boxdiv');
  divs.forEach(div => div.addEventListener('mouseover', randoColor))	
-	
+ 	
 }
+
 
 function randoColor(e) {
-  e.target.style.backgroundColor = '#'+Math.random().toString(16).substr(-6);	
-	
+  
+  e.target.style.backgroundColor = '#'+Math.random().toString(16).substr(-6);	 
 }
 
+
+
 randomColors.addEventListener('click', randomColorGen);
+randomColors.addEventListener('click', function() {
+const random = document.querySelector("#random-colors")	
+random.classList.toggle('highlight');		
+});
+
 reset.addEventListener('click', resetGrid);
 
 
@@ -65,4 +75,3 @@ const onLoad = () => {
 }
 
 onLoad();
-
