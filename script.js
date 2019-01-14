@@ -31,12 +31,32 @@ function clearBox() {
   divs.forEach(div => div.style.backgroundColor = '#ffffff');
 }
 
+function rmvGrid() {
+var myNode = document.getElementById("container");
+while (myNode.firstChild) {
+  myNode.removeChild(myNode.firstChild);	
+}	
+}
 
 
-function resetGrid(){
+function resetGrid() {
 let howMany = prompt("How many squares would you like?");
+rmvGrid();
 getGrid(howMany)
 }
+
+
+
+reset.addEventListener('click', resetGrid);
+
+
+const onLoad = () => {
+  getGrid(defaultSize);
+}
+
+onLoad();
+
+
 
 
 
