@@ -23,6 +23,7 @@ function getGrid(num) {
 };
 
 function changeColor(e){
+	
 e.target.style.backgroundColor = 'black';
 }
 
@@ -38,15 +39,24 @@ while (myNode.firstChild) {
 }	
 }
 
-
 function resetGrid() {
 let howMany = prompt("How many squares would you like?");
 rmvGrid();
 getGrid(howMany)
 }
 
+const randomColorGen = function () {
+ const divs = document.querySelectorAll('.boxdiv');
+ divs.forEach(div => div.addEventListener('mouseover', randoColor))	
+	
+}
 
+function randoColor(e) {
+  e.target.style.backgroundColor = '#'+Math.random().toString(16).substr(-6);	
+	
+}
 
+randomColors.addEventListener('click', randomColorGen);
 reset.addEventListener('click', resetGrid);
 
 
@@ -56,17 +66,3 @@ const onLoad = () => {
 
 onLoad();
 
-
-
-
-
-reset.addEventListener('click', resetGrid);
-
-
-const onLoad = () => {
-  getGrid(defaultSize);
-}
-
-onLoad();
-
-;
