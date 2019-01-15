@@ -2,9 +2,9 @@ const container = document.querySelector('#container');
 const boxdiv = document.getElementsByClassName('boxdiv');
 const reset = document.getElementById('reset');
 const randomColors = document.getElementById('random-colors')
+const eraseBtn = document.getElementById('eraser');
 let defaultSize = 100;
-const rndButton = document.getElementsByClassName('highlight')
-let randomColorMode = false;
+let isBlack = true;
 
 var cell = document.querySelectorAll('.boxdiv');
 
@@ -18,18 +18,12 @@ function getGrid(num) {
     width = 600 / specs;
     div.style.width = `${height}px`;
     div.style.height = `${width}px`;
+	div.addEventListener('mouseover', setBoxColor)
     container.appendChild(div);
   }
-  const divs = document.querySelectorAll('.boxdiv');
-  divs.forEach(div => div.addEventListener('mouseover', changeColor));
 };
 
 
-function changeColor(e){
-
-e.target.style.backgroundColor = 'black';
-
-}
 
 
 function clearBox() {
@@ -56,14 +50,37 @@ getGrid(howMany)
 
 
 
+
 reset.addEventListener('click', resetGrid);
-randomColors.addEventListener('click', toggleRandomColor);
-randomColors.addEventListener('click', function() {
-      const random = document.querySelector("#random-colors")	
-      random.classList.toggle('highlight');
-  });
+randomColors.addEventListener('click', () => {
+  randomColors.classList.toggle('rainbow-highlight')  
+});
+randomColors.addEventListener('click', setColorStatus)
+eraseBtn.addEventListener('click', () => {
+  eraseBtn.classList.toggle('eraser-highlight')
+   
+});
+
+	
 
 
+function setColorStatus() {
+    if(isBlack){
+        isBlack = 0;
+    }else {
+        isBlack = true;
+    }
+}
+
+
+function setBoxColor() {
+	if (isBlack == true) {
+		this.style.backgroundColor = "black"
+	} else if (isBlack == false) {
+		this.style.backgroundColor = '#'+Math.random().toString(16).substr(-6);	
+	}
+	
+}
 
 const onLoad = () => {
   getGrid(defaultSize);
@@ -72,32 +89,3 @@ const onLoad = () => {
 onLoad();
 
 
-
-
-
-
-
-
-function toggleRandomColor(e) {
-
-      
-  if (!randomColorMode) {
-      const divs = document.querySelectorAll('.boxdiv');
-      divs.forEach(div => div.addEventListener('mouseover', function() {
-
-      e.target.style.backgroundColor = '#'+Math.random().toString(16).substr(-6);        
-      randomColorMode = true;
-
-      }))           		
-} else {
-  const divs = document.querySelectorAll('.boxdiv');
-  divs.forEach(div => div.addEventListener('mouseover', function() {
-
-  e.target.style.backgroundColor = 'black';        
-  randomColorMode = false
-
-       }));
-
-	}
-
-}
