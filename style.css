@@ -1,5 +1,4 @@
 
-
 button {
   font-size: 18px;
   font-family: sans-serif;
@@ -35,12 +34,19 @@ button:hover {
 	color: #e9ebed	
 }
 
-.highlight {
+.rainbow-highlight {
 	background-color: black;
-	color: #e9ebed		
-	
+	color: #e9ebed;		
+	border: 5px solid transparent;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+	border-image-slice: 0.5;
 }
 
+.eraser-highlight {
+	background-color: pink;
+	color: black;
+	
+}
 
 .buttons {	
   text-align: center;
@@ -59,4 +65,3 @@ button:hover {
   flex-wrap: wrap;
   box-shadow: 5px 5px 5px gray;
 }
-
