@@ -1,10 +1,4 @@
 
-button {
-  font-size: 18px;
-  font-family: sans-serif;
-  margin: 0 auto;
-}
-
 h1 {
   font-size: 25px;
   margin: 0 auto;
@@ -13,44 +7,6 @@ h1 {
   font-weight: 600;
   width: 230px;
    
-}
-
-
-button {
-  -webkit-appearance: none;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
-  width: 150px;
-  height: 50px;
-  border: solid .5px gray;
-  transition-duration: 0.2s;
-  background-color: #e9ebed;
-  color: black;
-  
-}
-
-button:hover {
-	background-color: black;
-	color: #e9ebed	
-}
-
-.rainbow-highlight {
-	background-color: black;
-	color: #e9ebed;		
-	border: 5px solid transparent;
-    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-	border-image-slice: 0.5;
-}
-
-.eraser-highlight {
-	background-color: pink;
-	color: black;
-	
-}
-
-.buttons {	
-  text-align: center;
-  margin: 20px;
 }
 
 #container {
@@ -65,3 +21,38 @@ button:hover {
   flex-wrap: wrap;
   box-shadow: 5px 5px 5px gray;
 }
+
+.buttons {	
+  text-align: center;
+  margin: 20px;
+}
+
+button {
+  -webkit-appearance: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+  width: 150px;
+  height: 50px;
+  border: solid .5px gray;
+  transition-duration: 0.2s;
+  background-color: #e9ebed;
+  color: black;
+  font-size: 18px;
+  font-family: sans-serif;
+  margin: 0 auto;
+}
+
+button:hover {
+  background-color: black;
+  color: #e9ebed	
+}
+
+.random-highlight {
+  background-color: black;
+  color: #e9ebed;		
+  border: 5px solid transparent;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 0.5;
+}
+
+
